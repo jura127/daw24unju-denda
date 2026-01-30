@@ -1,13 +1,11 @@
 <?php
-require_once 'config.php';
-// --------------------
-// INCLUSIÓN DE CLASES
-// --------------------
-// Asegúrate de que las rutas sean correctas para tu proyecto
-require_once __DIR__ . '/klaseak/com/leartik/daw24unju/produktuak/produktuak.php';
-require_once __DIR__ . '/klaseak/com/leartik/daw24unju/produktuak/produktuak_db.php';
-require_once __DIR__ . '/klaseak/com/leartik/daw24unju/kategoriak/kategoriak.php';
-require_once __DIR__ . '/klaseak/com/leartik/daw24unju/kategoriak/kategoriak_db.php';
+// Usamos realpath para normalizar la ruta y DIRECTORY_SEPARATOR para las barras
+$base_path = realpath(__DIR__) . DIRECTORY_SEPARATOR;
+
+require_once $base_path . 'klaseak/com/leartik/daw24unju/produktuak/produktuak.php';
+require_once $base_path . 'klaseak/com/leartik/daw24unju/produktuak/produktuak_db.php';
+require_once $base_path . 'klaseak/com/leartik/daw24unju/kategoriak/kategoriak.php';
+require_once $base_path . 'klaseak/com/leartik/daw24unju/kategoriak/kategoriak_db.php';
 
 // --------------------
 // OBTENER Y AGRUPAR DATOS
