@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="eu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mediateka | Magia Neón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="mediateka.css">
+</head>
+<body>
+<header class="grid-header">
+    <div class="logo-container">
+        <img src="img/cajaconcartas-modified.jpg" alt="Logo Tienda de Magia" class="logo">
+    </div>
+<nav class="main-nav">
+    <ul>
+        <li><a href="../index.php">Inicio</a></li>
+        <li><a href="../catalogo.php">Catálogo</a></li>
+        <li><a href="../accesorios.php">Accesorios</a></li>
+        <li><a href="../contacto/index.php">Contacto</a></li>
+        <li><a href="mediateka/mediateka.html" class="active">Mediateka</a></li>
+        <li><a href="../cesta.php">Cesta</a></li>
+        <li>
+            <?php if ($esta_logueado): ?>
+                <a href="../login.php?action=logout" title="Cerrar Sesión"></a>
+            <?php else: ?>
+                <a href="../login.php">Login/Reg</a>
+            <?php endif; ?>
+        </li>
+    </ul>
+</nav>
+</header>
+
+    <main class="section-container">
+        <h1>Mediateka</h1>
+
+        <section class="card-section">
+            <h2 class="neon-title"><i class="ph ph-image"></i> Irudiak</h2>
+            <div class="productos-seccion-grid">
+                
+                <article class="producto-card">
+                    <div class="carousel-container">
+                        <button class="carousel-btn" onclick="moveSlide(-1)">&#10094;</button>
+                        
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track" id="track">
+                                <figure class="carousel-item">
+                                    <a target="_blank" href="../img/Bicycle2-1536x1025.jpg">
+                                        <img src="../img/Bicycle2-1536x1025.jpg" alt="Baraja Magia">
+                                    </a>
+                                    <figcaption>Barajas</figcaption>
+                                </figure>
+                                
+                                <figure class="carousel-item">
+                                    <a target="_blank" href="../img/monedas_magia.jpg">
+                                        <img src="../img/monedas_magia.jpg" alt="Monedas">
+                                    </a>
+                                    <figcaption>Set de Monedas</figcaption>
+                                </figure>
+                                
+                                <figure class="carousel-item">
+                                    <a target="_blank" href="../img/Trucos-y-barajas-incluidos-en-el-kit-de-magia-de-Julio-Ribera-1.jpg">
+                                        <img src="../img/Trucos-y-barajas-incluidos-en-el-kit-de-magia-de-Julio-Ribera-1.jpg" alt="Kit de Magia">
+                                    </a>
+                                    <figcaption>Kit de magia</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <button class="carousel-btn" onclick="moveSlide(1)">&#10095;</button>
+                    </div>
+
+                    <div class="gallery-wrapper">
+                        <img src="../icons/cards.png" alt="Cards" id="icon-cards" class="clickable-icon">
+                        <img src="../icons/coins.png" alt="Coins" id="icon-coins" class="clickable-icon">
+                        <img src="../icons/magictricks.png" alt="Wand" id="icon-wand" class="clickable-icon">
+                    </div>
+                    <audio id="sound-cards" src="../audioa/shuffling-cards-74757.mp3"></audio>
+                    <audio id="sound-coins" src="../audioa/spinning-coin-on-table-352448.mp3"></audio>
+                    <audio id="sound-wand" src="../audioa/magic-wand-6214.mp3"></audio>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2 class="neon-title"><i class="ph ph-speaker-high"></i> Audioa</h2>
+            <div class="audio-grid">
+                <div class="method">
+                    <p>Etiketa Estandarra</p>
+                    <audio id="audioEstandarra" controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+                </div>
+                
+                <div class="method">
+                    <p>JS Erreprodukzioa</p>
+                    <div class="btn-group">
+                        <button class="add-to-cart-btn" onclick="playAudio()"><i class="ph ph-play"></i> Play</button>
+                        <button class="btn-eliminar" onclick="pauseAudio()"><i class="ph ph-pause"></i> Pause</button>
+                    </div>
+                </div>
+
+                <div class="method">
+                    <p>JS Bolumen Kontrola</p>
+                    <div class="volume-control">
+                        <input type="range" id="volRange" min="0" max="1" step="0.1" value="0.5">
+                        <span id="volValue">50%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <h2 class="neon-title"><i class="ph ph-video"></i> Bideo Erreproduzitzailea</h2>
+            <div class="video-container-box">
+                <div class="controls-neon">
+                    <button id="pauseBtn" class="btn-ctrl">Pause</button>
+                    <button id="stopBtn" class="btn-ctrl danger">Stop</button>
+                    <button id="playBtn" class="btn-ctrl success">PLAY</button>
+                    <button id="muteBtn" class="btn-ctrl info">MUTE</button>
+                    <button id="volPlusBtn" class="btn-ctrl">+</button>
+                    <button id="volMinusBtn" class="btn-ctrl">-</button>
+                </div>
+                <div class="select-neon-wrapper">
+                    <select id="bideoHautatzailea" class="neon-select">
+                        <option value="bideo1">Goma Brazo</option>
+                        <option value="bideo2">Romper Goma</option>
+                        <option value="bideo3">Desaparición Moneda</option>
+                    </select>
+                </div>
+                <video id="erreproduzitzailea" width="100%" height="auto" poster="../img/poster.png"></video>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Magia Neón Mediateka</p>
+    </footer>
+
+    <script src="mediateka.js"></script>
+</body>
+</html>

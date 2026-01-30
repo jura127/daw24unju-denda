@@ -1,0 +1,908 @@
+/* 🎨 PALETA DE COLORES "MARINO Y NEÓN ESMERALDA" */
+/* Marino Profundo (Fondo Principal): #000a12 */
+/* Verde Neón Esmeralda (Acento): #00ff88 */
+/* Texto Principal (Blanco Azulado): #e6f7ff */
+/* Fondo de Contraste (Azul Oscuro): #0a1c29 */
+/* Error Neón: #ff4466 */
+
+/* ======== RESET ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Fuente moderna y tecnológica */
+    font-family: 'Space Mono', monospace; 
+}
+
+/* ======== BODY ======== */
+body {
+    background-color: #000a12; /* Marino Profundo */
+    color: #e6f7ff; /* Letras blancas azuladas */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+html {
+    /* RUTA CORREGIDA: Usando ruta relativa para salir de la carpeta CSS (..) y entrar en IMG (img/) */
+    cursor: url('../img/bitmap.png'), auto ; 
+}
+
+
+/* ======== HEADER ======== */
+.grid-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 60px; 
+    background-color: #000a12;
+    border-bottom: 2px solid #00ff88; /* Borde pronunciado Verde Neón */
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3); /* Sombra difusa Neón */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container img.logo {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid #00ff88; /* Borde Neón al logo */
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.6); /* Brillo alrededor del logo */
+    transition: all 0.4s ease;
+}
+
+.logo-container img.logo:hover {
+    transform: rotate(5deg) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.9);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+.main-nav ul li a {
+    text-decoration: none;
+    color: #e6f7ff;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.4s ease, text-shadow 0.4s ease, transform 0.3s ease;
+    padding: 5px 0;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: #00ff88; /* Verde Neón al pasar/activo */
+    text-shadow: 0 0 15px rgba(0, 255, 136, 0.9), 0 0 25px rgba(0, 255, 136, 0.6); /* Efecto glow futurista */
+    transform: translateY(-2px);
+}
+
+/* ======== FORMULARIO DE CONTACTO ======== */
+.container-form {
+    max-width: 550px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #0a1c29; /* Fondo de Contraste Azul Oscuro */
+    color: #e6f7ff;
+    border-radius: 15px;
+    /* Sombra profunda con brillo Neón */
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.5), inset 0 0 10px rgba(0, 255, 136, 0.2); 
+    border: 1px solid #00ff88;
+    position: relative;
+    overflow: hidden;
+    /* === CORRECCIÓN DE CAPA: Asegura que el contenedor esté visible === */
+    z-index: 100;
+}
+
+/* Animación de pulso */
+.container-form::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 255, 136, 0.1) 0%, transparent 70%);
+    animation: pulseBackground 8s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes pulseBackground {
+    0% { transform: scale(0.8) rotate(0deg); opacity: 0.5; }
+    100% { transform: scale(1.2) rotate(360deg); opacity: 0.8; }
+}
+
+.container-form > *:not(.container-form::before) {
+    position: relative;
+    z-index: 1;
+}
+
+.container-form h2 {
+    font-size: 2.2rem; 
+    color: #00ff88; /* Título Neón */
+    margin-bottom: 35px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+}
+
+.container-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #e6f7ff;
+    font-size: 1.05rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100% !important; 
+    padding: 12px 18px !important; 
+    margin-bottom: 25px !important;
+    background-color: #000a12 !important; 
+    
+    /* === CORRECCIÓN DE COLOR DE TEXTO NORMAL: Neón Verde Forzado === */
+    color: #00ff88 !important; 
+    
+    border: 1px solid #336680 !important; 
+    border-radius: 8px !important; 
+    box-sizing: border-box !important;
+    font-size: 1rem !important;
+    
+    /* === CORRECCIONES AGRESIVAS PARA PERMITIR LA ESCRITURA === */
+    pointer-events: auto !important;
+    cursor: text !important;
+    
+    position: relative !important;
+    z-index: 9999 !important; /* Capa más alta */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+textarea:focus {
+    border-color: #00ff88 !important; /* Borde Neón al enfocar */
+    outline: none !important;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.8), inset 0 0 5px rgba(0, 255, 136, 0.4) !important;
+    
+    /* === CORRECCIÓN CLAVE: Asegura que el cursor (caret) sea visible en todos los campos === */
+    caret-color: #00ff88 !important; 
+}
+
+/* === ESTILOS PARA EL PLACEHOLDER (Texto temporal) === */
+::placeholder { 
+    color: rgba(230, 247, 255, 0.5); /* Blanco azulado semi-transparente */
+    opacity: 1; 
+}
+::-webkit-input-placeholder { color: rgba(230, 247, 255, 0.5); }
+::-moz-placeholder { color: rgba(230, 247, 255, 0.5); }
+:-ms-input-placeholder { color: rgba(230, 247, 255, 0.5); }
+/* ================================================= */
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Botón de Enviar (Acento Neón con texto Oscuro) */
+button[type="submit"] {
+    background-color: #00ff88;
+    color: #000a12; /* Letras en Marino Profundo */
+    border: none;
+    padding: 15px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.5);
+}
+
+button[type="submit"]:hover {
+    background-color: #00cc66; /* Neón más oscuro */
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.8), 0 0 30px rgba(0, 255, 136, 0.6);
+}
+
+/* ======== ALERTAS Y MENSAJES ======== */
+/* Se utiliza la clase 'message' para los mensajes de login/registro */
+.alerta, .message { 
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    color: #000a12; /* Texto oscuro para contraste */
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.exito {
+    background-color: #00ff88; /* Verde Neón para Éxito */
+    color: #000a12; 
+    border-color: #00e673;
+}
+
+.error {
+    background-color: #ff4466; /* Rojo/Rosa Neón para Error */
+    color: #000a12;
+    border-color: #cc3352;
+}
+
+/* ======== IMÁGENES: EFECTO GLITCH/HOLOGRÁFICO PREMIUM ======== */
+.producto-imagen img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 10px;
+    background-color: #000a12;
+    
+    /* ESTILO BASE: IMAGEN CON TONO AZUL/VERDE Y ALTO CONTRASTE */
+    filter: grayscale(100%) brightness(150%) contrast(180%) hue-rotate(100deg) saturate(200%);
+    transition: filter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.5s ease;
+    border: 2px solid rgba(0, 255, 136, 0.4);
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.2);
+}
+
+.producto-card:hover .producto-imagen img {
+    filter: none;
+    opacity: 0.9;
+    transform: scale(1.03) rotateZ(1deg);
+    box-shadow: 0 0 25px rgba(0, 255, 136, 0.8), 0 0 50px rgba(0, 255, 136, 0.4);
+    border-color: #00ff88;
+}
+
+/* ======== MAIN SECTIONS & PRODUCTOS GRID ======== */
+main h1 {
+    color: #e6f7ff;
+    text-align: center;
+    padding-top: 60px;
+    font-size: 3rem;
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.7);
+    letter-spacing: 2px;
+}
+
+.section-container {
+    padding: 80px 100px;
+    text-align: center;
+}
+
+.section-container h2 {
+    font-size: 2.5rem;
+    color: #00ff88; /* Título Neón */
+    margin-bottom: 50px;
+    border-bottom: 3px solid #00ff88;
+    padding-bottom: 15px;
+    display: inline-block;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.6);
+    letter-spacing: 1px;
+}
+
+.productos-seccion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    justify-items: center;
+}
+
+.producto-card {
+    background-color: #0a1c29; /* Fondo Intermedio para la tarjeta */
+    border: 1px solid #00ff88;
+    border-radius: 12px;
+    padding: 25px;
+    width: 100%;
+    max-width: 320px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    color: #e6f7ff;
+    position: relative;
+    overflow: hidden;
+}
+
+.producto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 136, 0.05) 0%, transparent 50%, rgba(0, 255, 136, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.producto-card:hover::before {
+    opacity: 1;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0px 15px 40px rgba(0, 255, 136, 0.8), 0 0 50px rgba(0, 255, 136, 0.4); /* Fuerte brillo Neón */
+    border-color: #00ff88;
+}
+
+.producto-nombre {
+    font-size: 1.3rem;
+    margin: 15px 0 8px;
+    color: #e6f7ff;
+    font-weight: 600;
+}
+
+.producto-precio,
+.sale-price {
+    font-weight: 700;
+    color: #ff4466; /* Usamos el color de Error para Precio Original/Descuento */
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255, 68, 102, 0.7);
+}
+
+/* Nota: el precio en oferta/venta, si es el precio principal, debería usar el color de acento (#00ff88) */
+.sale-price {
+    color: #00ff88; 
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.7);
+}
+
+.original-price {
+    color: #336680; /* Gris azulado para precio tachado */
+    margin-right: 8px;
+    font-size: 1.1rem;
+    text-decoration: line-through;
+}
+
+.prices-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* ======== BOTÓN (Producto) ======== */
+.add-to-cart-btn {
+    background-color: #00ff88;
+    color: #000a12; 
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+    font-weight: bold;
+    width: 100%;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 12px rgba(0, 255, 136, 0.4);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #00cc66;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.7);
+}
+
+/* ======== NO PRODUCTOS ======== */
+.no-productos {
+    color: #e6f7ff;
+    font-style: italic;
+    font-size: 1.2rem;
+    padding: 50px 0;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 2px solid #00ff88; /* Acento Neón */
+    color: #e6f7ff;
+    font-size: 1rem;
+    background-color: #0a1c29; /* Fondo Intermedio */
+    box-shadow: 0 -5px 20px rgba(0, 255, 136, 0.3);
+}
+
+/* ======== BOTÓN HERO & HERO SECTION (Si los tienes) ======== */
+.explore-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 18px 40px;
+    background-color: #00ff88;
+    color: #000a12;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.4s ease;
+    font-size: 1.2rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(0, 255, 136, 0.5);
+}
+
+.explore-button:hover {
+    background-color: #00cc66;
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 255, 136, 0.9), 0 0 40px rgba(0, 255, 136, 0.7);
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 100px 40px;
+    text-align: center;
+    background-color: #0a1c29;
+    border-bottom: 2px solid #00ff88;
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+    min-height: 70vh;
+}
+
+.hero-section h1 {
+    color: #00ff88;
+    font-size: 4rem;
+    margin-top: 20px;
+    text-shadow: 0 0 25px rgba(0, 255, 136, 1), 0 0 40px rgba(0, 255, 136, 0.8);
+    letter-spacing: 3px;
+    line-height: 1.1;
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #e6f7ff;
+    max-width: 800px;
+    margin-top: 20px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* ======== CESTA: TABLA ======== */
+
+.cesta-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #e6f7ff;
+    font-size: 1rem;
+    background-color: #0a1c29;
+    border: 1px solid #00ff88;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.cesta-table th, .cesta-table td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.cesta-table thead th {
+    background-color: #000a12;
+    color: #00ff88;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.cesta-table tbody tr:hover {
+    background-color: #05141e;
+}
+
+.cesta-table tfoot td {
+    background-color: #000a12;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00ff88;
+    border-top: 2px solid #00ff88;
+}
+
+.btn-eliminar {
+    background-color: #ff4466; /* Error Neón para eliminar */
+    color: #000a12;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+    background-color: #cc3352;
+}
+
+.cesta-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.btn-finalizar, .btn-vaciar {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-finalizar {
+    background-color: #00ff88;
+    color: #000a12;
+    box-shadow: 0 4px 15px rgba(0, 255, 136, 0.6);
+    border: none;
+}
+
+.btn-finalizar:hover {
+    background-color: #00cc66;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 136, 0.9);
+}
+
+.btn-vaciar {
+    background-color: #ff4466;
+    color: #000a12;
+    border: none;
+    box-shadow: 0 4px 15px rgba(255, 68, 102, 0.6);
+}
+
+.btn-vaciar:hover {
+    background-color: #cc3352;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 68, 102, 0.9);
+}
+
+/* ======== NOTIFICACIÓN DE CESTA (index.php) ======== */
+.cart-notification {
+    text-align: center;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 80%;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    transform: translateY(-20px);
+}
+
+.cart-notification.success {
+    background-color: #00ff88;
+    color: #000a12;
+    border: 1px solid #00e673;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.7);
+}
+
+.cart-notification.active-notification {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+
+/* ======== ESTILOS DE AUTENTICACIÓN (LOGIN/REGISTRO GENERAL) ======== */
+
+/* Contenedor doble (obsoleto, pero mantenemos la clase 'auth-container' por si acaso) */
+.auth-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: 80px auto;
+    gap: 40px;
+    padding: 20px;
+}
+/* Formulario individual (obsoleto, pero mantenemos la clase 'auth-form' por si acaso) */
+.auth-form {
+    flex: 1;
+    padding: 40px;
+    background-color: #0a1c29; 
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.5), inset 0 0 10px rgba(0, 255, 136, 0.2); 
+    border: 1px solid #00ff88;
+    transition: transform 0.3s ease;
+}
+.auth-form:hover {
+    transform: translateY(-5px);
+}
+.auth-form h2 {
+    font-size: 2.2rem; 
+    color: #00ff88; 
+    margin-bottom: 35px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+    border-bottom: 2px solid rgba(0, 255, 136, 0.4);
+    padding-bottom: 10px;
+}
+.auth-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.auth-form input {
+    margin-bottom: 0; 
+}
+.auth-form button {
+    margin-top: 10px; 
+}
+
+/* Panel de Logout */
+.logout-panel {
+    text-align: center;
+    padding: 80px 40px;
+    background-color: #0a1c29;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 80px auto;
+    border: 2px solid #00ff88;
+    box-shadow: 0 0 50px rgba(0, 255, 136, 0.7);
+}
+.logout-panel h2 {
+    font-size: 3rem;
+    color: #00ff88;
+    text-shadow: 0 0 15px rgba(0, 255, 136, 1);
+    margin-bottom: 20px;
+}
+.logout-panel p {
+    font-size: 1.3rem;
+    color: #e6f7ff;
+    margin-bottom: 40px;
+}
+
+/* Botón de Logout */
+.logout-link.explore-button {
+      background-color: #ff4466 !important; 
+      box-shadow: 0 8px 20px rgba(255, 68, 102, 0.7);
+      margin-left: 20px;
+}
+.logout-link.explore-button:hover {
+    background-color: #cc3352 !important;
+    box-shadow: 0 12px 30px rgba(255, 68, 102, 0.9);
+}
+
+/* -------------------------------------------------------------------------- */
+/* ======== ESTILOS PARA LOGIN/REGISTRO UNIFICADO (CSS ONLY) ======== */
+/* -------------------------------------------------------------------------- */
+
+.auth-wrapper {
+    /* Contenedor alrededor del panel para centrar */
+    max-width: 450px;
+    margin: 80px auto;
+}
+
+.auth-container-single {
+    /* Estilo principal de la caja */
+    padding: 40px;
+    background-color: #0a1c29; 
+    border-radius: 15px;
+    box-shadow: 0 0 40px rgba(0, 255, 136, 0.5), inset 0 0 10px rgba(0, 255, 136, 0.2); 
+    border: 1px solid #00ff88;
+    text-align: center;
+    position: relative;
+}
+
+/* Ocultar elementos específicos por defecto (estado inicial: Login) */
+/* Titles, Buttons and Fields related to Register */
+.auth-title-register,
+.main-auth-btn-register,
+.register-field,
+.toggle-to-login {
+    display: none;
+}
+
+/* Controlar la visualización del Título */
+.auth-container-single h2 {
+    /* Estilos generales del título (ya definidos arriba, pero se mantienen) */
+    font-size: 2.2rem; 
+    color: #00ff88; 
+    margin-bottom: 25px;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.7);
+    border-bottom: 2px solid rgba(0, 255, 136, 0.4);
+    padding-bottom: 10px;
+}
+
+/* Controlar el estado: Modo Registro usando el radio button oculto #mode-register */
+#mode-register:checked ~ .auth-container-single .auth-title-login,
+#mode-register:checked ~ .auth-container-single .main-auth-btn-login,
+#mode-register:checked ~ .auth-container-single .toggle-to-register {
+    display: none;
+}
+
+#mode-register:checked ~ .auth-container-single .auth-title-register,
+#mode-register:checked ~ .auth-container-single .main-auth-btn-register,
+#mode-register:checked ~ .auth-container-single .register-field,
+#mode-register:checked ~ .auth-container-single .toggle-to-login {
+    display: block;
+}
+
+/* Estilos de los inputs (asegurando margen consistente) */
+.auth-form-single form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-form-single input {
+    margin-bottom: 0; /* Anulamos el margen predeterminado de los inputs */
+}
+
+/* Estilos para el botón de alternancia (Label) */
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #00ff88;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    transition: color 0.3s;
+    padding: 5px;
+    display: block; /* Aseguramos que los labels actúen como bloques */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.toggle-btn:hover {
+    color: #e6f7ff;
+}
+
+/* Ajuste para el mensaje de alerta dentro del panel único */
+.auth-container-single .message {
+    margin-bottom: 20px;
+}
+
+/* Estilos para los botones de acción principal */
+.main-auth-btn-login, .main-auth-btn-register {
+    /* Hereda estilos del botón[type="submit"] */
+    margin-top: 10px; 
+}
+
+/* Ocultar los radio buttons de control */
+.auth-wrapper input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+/* ========================================================================= */
+/* ======================== MEDIA QUERIES (RESPONSIVIDAD) ================== */
+/* ========================================================================= */
+
+@media (max-width: 1024px) {
+    .grid-header {
+        padding: 15px 30px;
+    }
+    .main-nav ul {
+        gap: 25px;
+    }
+    .section-container {
+        padding: 50px 40px;
+    }
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+    .hero-section {
+        padding: 80px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* NAV & HEADER */
+    .grid-header {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 20px;
+    }
+    .main-nav ul li a {
+        font-size: 1rem;
+    }
+
+    /* MAIN CONTENT */
+    main h1 {
+        font-size: 2.5rem;
+        padding-top: 40px;
+    }
+    .section-container {
+        padding: 40px 20px;
+    }
+    .section-container h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    /* HERO */
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    .explore-button {
+        padding: 15px 30px;
+        font-size: 1.1rem;
+    }
+
+    /* PRODUCTOS Y GRID */
+    .productos-seccion-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    .producto-card {
+        max-width: 100%;
+    }
+
+    /* CESTA (Hacemos la tabla responsiva con data-labels) */
+    .cesta-table, .cesta-table tbody, .cesta-table tr, .cesta-table td {
+        display: block;
+        width: 100%;
+    }
+    .cesta-table thead {
+        display: none;
+    }
+    .cesta-table tr {
+        margin-bottom: 15px;
+        border: 1px solid #00ff88;
+        border-radius: 8px;
+    }
+    .cesta-table td {
+        text-align: right !important;
+        padding-left: 50%;
+        position: relative;
+    }
+    .cesta-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+        color: #00ff88;
+    }
+    .cesta-table tfoot td:last-child {
+        text-align: right !important;
+    }
+    .cesta-actions {
+        justify-content: space-around;
+        flex-direction: column-reverse;
+        gap: 15px;
+    }
+    .btn-finalizar, .btn-vaciar {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    
+    /* LOGIN/REGISTRO UNIFICADO */
+    .auth-wrapper {
+        max-width: 90%;
+        margin: 40px auto;
+    }
+    .auth-container-single {
+        padding: 30px;
+    }
+    .logout-panel {
+        max-width: 90%;
+        padding: 50px 20px;
+    }
+    .logout-link.explore-button {
+        /* Para que los botones se apilen en lugar de flotar */
+        display: block;
+        width: 100%;
+        margin: 10px 0 0 0 !important; 
+    }
+}
